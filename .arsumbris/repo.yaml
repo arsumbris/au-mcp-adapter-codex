@@ -1,0 +1,5 @@
+type: au.engine.repo::au-engine
+name: au-mcp-adapter-codex
+description: The Codex CLI adapter for au-mcp; translates hooks, tools, session identity, and generated skills and instructions.
+deps:
+  - name: au-mcp-sdk

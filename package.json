@@ -1,0 +1,28 @@
+{
+  "name": "@arsumbris/au-mcp-adapter-codex",
+  "packageManager": "pnpm@11.1.1",
+  "engines": { "node": ">=23" },
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "exports": {
+    ".": "./src/index.ts"
+  },
+  "scripts": {
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run"
+  },
+  "dependencies": {
+    "@arsumbris/au-mcp": "link:../au-mcp",
+    "@arsumbris/au-mcp-sdk": "link:../au-mcp-sdk",
+    "@modelcontextprotocol/sdk": "^1.29.0",
+    "ws": "^8.21.3"
+  },
+  "devDependencies": {
+    "@arsumbris/au-engine-sdk": "link:../au-engine-sdk",
+    "@types/node": "^25.9.1",
+    "@types/ws": "^8.18.1",
+    "typescript": "^6.0.3",
+    "vitest": "^4.1.7"
+  }
+}

@@ -1,0 +1,2 @@
+# Exclude operation logs and runtime state from engine discovery.
+operations/

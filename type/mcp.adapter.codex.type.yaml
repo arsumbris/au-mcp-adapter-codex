@@ -1,0 +1,14 @@
+# Launcher discovery metadata. Entry paths are relative to this repository.
+# The type name matches AdapterInfo.harness in src/surface.ts.
+# Include this repository in the served workspace to discover the adapter.
+extends: mcp.adapter::au-mcp-sdk
+meta:
+  - type: adapter-runtime-meta::au-mcp-sdk
+    contractVersion: 0
+    agentBinary: codex
+    launchEntry: ./bin/launch.ts
+    skillsEntry: ./bin/gen-skills.ts
+    injectEntry: ./bin/gen-inject.ts
+  - type: adapter-presentation-meta::au-mcp-sdk
+    description: "Bridges the Codex CLI to the au-mcp daemon — hooks, tools, session identity, generated skills and instructions."
+    label: "Codex CLI"

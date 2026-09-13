@@ -1,0 +1,14 @@
+.DS_Store
+
+# pnpm install materializes these; never commit them
+node_modules/
+
+# Workspace runtime state; retain authored agent profiles.
+operations/*
+!operations/agent-profile/
+.arsumbris/*.sock
+.arsumbris/*.lock
+
+# python bytecode
+__pycache__/
+*.pyc
