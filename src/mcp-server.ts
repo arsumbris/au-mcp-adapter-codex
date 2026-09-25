@@ -16,7 +16,7 @@ import { openCodexSession } from './session-open.ts'
 import { markStartupContextEmitted, type StartupDelivery } from './startup-readiness.ts'
 
 type Capabilities = Awaited<ReturnType<DaemonClient['listCapabilities']>>
-const NO_CAPS: Capabilities = { callables: [], redirects: [] }
+const NO_CAPS: Capabilities = { callables: [] }
 const READINESS_TIMEOUT_MS = 8_000
 const INVOCATION_TIMEOUT_MS = 120_000
 

@@ -10,7 +10,7 @@ const meta = (thread_id: string) => ({ callId: 'call-1', 'x-codex-turn-metadata'
 const manifest = (name: string): ToolManifest => ({ id: `mcp.${name}`, kind: 'tool', name, contractVersion: 0 })
 function daemon(names = ['read_file']) {
   return {
-    listCapabilities: vi.fn(async () => ({ callables: names.map(manifest), redirects: [] })),
+    listCapabilities: vi.fn(async () => ({ callables: names.map(manifest) })),
     sessionOpen: vi.fn(async () => ({ contractVersion: 0 })),
     invoke: vi.fn(async () => ({ result: 'done' })),
     dispose: vi.fn(),
@@ -66,7 +66,7 @@ describe('MCP daemon lifecycle', () => {
     const client = daemon(['read_file'])
     const g = gateway(client)
     await g.listTools()
-    client.listCapabilities.mockResolvedValue({ callables: [manifest('write_file')], redirects: [] })
+    client.listCapabilities.mockResolvedValue({ callables: [manifest('write_file')] })
     expect((await g.listTools()).tools.map(t => t.name)).toEqual(['write_file'])
     expect(JSON.stringify(await g.callTool('read_file', {}, meta(parent)))).toContain('not available')
     expect(client.invoke).not.toHaveBeenCalled()
